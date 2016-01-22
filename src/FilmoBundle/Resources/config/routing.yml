@@ -1,0 +1,3 @@
+filmo_homepage:
+    path:     /
+    defaults: { _controller: FilmoBundle:Default:index }
