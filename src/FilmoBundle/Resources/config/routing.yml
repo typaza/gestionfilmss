@@ -7,3 +7,9 @@ categorie_ajout:
 categorie_affiche:
     path:     /categorie
     defaults: { _controller: FilmoBundle:Categorie:show }
+acteur_ajout:
+    path:     /acteur/ajout
+    defaults: { _controller: FilmoBundle:Acteur:ajout }
+acteur_affiche:
+    path:     /acteur
+    defaults: { _controller: FilmoBundle:Acteur:show }
