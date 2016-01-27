@@ -3,4 +3,25 @@
 {% block body %}
 
     <h2 align="center">Affichage des acteurs</h2>
+    <table border="2" align="center" width="40%">
+        <tr>
+            <th>id</th>
+            <th>nom</th>
+            <th>prenom</th>
+            <th>sex</th>
+            <th>datenassance</th>
+        </tr>
+        {% for a in acteur %}
+            <tr>
+                <td>{{ a.id }}</td>
+                <td>{{ a.nom }}</td>
+                <td>{{ a.prenom }}</td>
+                <td>{% if a.sexe=="h" %}
+                        Homme{% else %} Femme{% endif %}
+                </td>
+                <td>{{ a.datenaissance|date("d/m/Y") }}</td>
+            </tr>
+
+        {% endfor %}
+    </table>
 {% endblock %}

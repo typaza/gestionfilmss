@@ -13,3 +13,9 @@ acteur_ajout:
 acteur_affiche:
     path:     /acteur
     defaults: { _controller: FilmoBundle:Acteur:show }
+acteur_edit:
+    path:     /acteur/edit/{id}
+    defaults: { _controller: FilmoBundle:Acteur:edit }
+acteur_del:
+    path:     /acteur/del/{id}
+    defaults: { _controller: FilmoBundle:Acteur:del }

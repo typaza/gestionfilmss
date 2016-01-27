@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Ajout d'acteur
+{% endblock %}
+{% block body %}
+    <form method="post">
+        <table>
+            <caption><h2>{{ msg }}</h2></caption>
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Valeur</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ form_label(form.nom) }}</td>
+                <td>{{ form_widget(form.nom) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_label(form.prenom) }}</td>
+                <td>{{ form_widget(form.prenom) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_label(form.datenaissance) }}</td>
+                <td>{{ form_widget(form.datenaissance) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_label(form.sexe) }}</td>
+                <td>{{ form_widget(form.sexe) }}</td>
+            </tr>
+
+            </tbody>
+        </table>
+        {{ form_rest(form) }}
+        <input type="submit" value={{ mb }}>
+    </form>
+
+{% endblock %}
