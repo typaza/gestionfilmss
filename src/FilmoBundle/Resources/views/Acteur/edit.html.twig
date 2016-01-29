@@ -1,8 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'FilmoBundle::index.html.twig' %}
 {% block title %}
     Ajout d'acteur
 {% endblock %}
 {% block body %}
+    <a href="{{ path("acteur_affiche") }}"><h4>Liste des Acteurs</h4></a>
     <form method="post">
         <table>
             <caption><h2>{{ msg }}</h2></caption>

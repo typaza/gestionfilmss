@@ -1,6 +1,6 @@
 filmo_homepage:
-    path:     /otherrr
-    defaults: { _controller: FilmoBundle:Default:index }
+    path:     /
+    defaults: { _controller: FilmoBundle:Default:accueil }
 categorie_ajout:
     path:     /categorie/ajout
     defaults: { _controller: FilmoBundle:Categorie:ajout }

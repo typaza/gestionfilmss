@@ -6,8 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
+    public function accueilAction()
     {
-        return $this->render('FilmoBundle:Default:index.html.twig');
+        return $this->render('FilmoBundle::index.html.twig');
     }
 }

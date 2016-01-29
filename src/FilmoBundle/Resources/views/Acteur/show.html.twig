@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'FilmoBundle::index.html.twig' %}
 
 {% block body %}
 
@@ -10,6 +10,7 @@
             <th>prenom</th>
             <th>sex</th>
             <th>datenassance</th>
+            <th>action</th>
         </tr>
         {% for a in acteur %}
             <tr>
@@ -20,8 +21,15 @@
                         Homme{% else %} Femme{% endif %}
                 </td>
                 <td>{{ a.datenaissance|date("d/m/Y") }}</td>
+                <td>
+                    <ul>
+                        <li><a href="{{ path('acteur_edit',{ id: a.id }) }}">Modifier</a></li>
+                        <li><a href="{{ path('acteur_del',{ id: a.id }) }}">Supprimier</a></li>
+                    </ul>
+                </td>
             </tr>
 
         {% endfor %}
     </table>
+    <a href="{{ path("acteur_ajout") }}"><h4 align="center">Ajouter un nouveau Acteur</h4></a>
 {% endblock %}
