@@ -1,0 +1,57 @@
+{% extends 'FilmoBundle::index.html.twig' %}
+
+{% block body %}
+    <h1>Films list</h1>
+
+    <table border="2" width="40%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Catégories</th>
+                <th>Acteurs</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for film in films %}
+            <tr>
+                <td><a href="{{ path('films_show', { 'id': film.id }) }}">{{ film.id }}</a></td>
+                <td>{{ film.titre }}</td>
+                <td>{{ film.description }}</td>
+                <td>{{ film.categorie.nom }}</td>
+                <td>{% for a in film.acteur %}
+                        <table width="70%">
+                            <tr>
+                                <td>{{ a.nom }}</td>
+                                <td>{{ a.prenom }}</td>
+                                <td>{{ a.datenaissance|date("d/m/Y") }}</td>
+                                <td>{% if a.sexe=="h" %}
+                                        Homme{% else %} Femme{% endif %}</td>
+                            </tr>
+                        </table>
+
+                    {% endfor %}
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('films_show', { 'id': film.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('films_edit', { 'id': film.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('films_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

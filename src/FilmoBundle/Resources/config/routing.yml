@@ -1,3 +1,7 @@
+filmo_films:
+    resource: "@FilmoBundle/Resources/config/routing/films.yml"
+    prefix:   /films
+
 filmo_homepage:
     path:     /
     defaults: { _controller: FilmoBundle:Default:accueil }
