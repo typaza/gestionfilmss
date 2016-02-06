@@ -11,6 +11,7 @@
                 <th>Description</th>
                 <th>Catégories</th>
                 <th>Acteurs</th>
+                <th>Images</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -26,14 +27,19 @@
                             <tr>
                                 <td>{{ a.nom }}</td>
                                 <td>{{ a.prenom }}</td>
+
                                 <td>{{ a.datenaissance|date("d/m/Y") }}</td>
                                 <td>{% if a.sexe=="h" %}
                                         Homme{% else %} Femme{% endif %}</td>
                             </tr>
+
                         </table>
 
+
                     {% endfor %}
+                    <td><img src="{{ asset(film.webPath) }}" alt=""></td>
                 </td>
+
                 <td>
                     <ul>
                         <li>
@@ -45,7 +51,9 @@
                     </ul>
                 </td>
             </tr>
+
         {% endfor %}
+
         </tbody>
     </table>
 

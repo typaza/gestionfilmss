@@ -23,7 +23,8 @@ class FilmsType extends AbstractType
             ->add('acteur', 'entity', array(
                 'class' => 'FilmoBundle\Entity\Acteur',
                 'choice_label' => 'prenom',
-                'multiple' => true));
+                'multiple' => true))
+            ->add('file');
     }
 
     /**
