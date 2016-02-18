@@ -18,14 +18,20 @@ class FilmsController extends Controller
      * Lists all Films entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $films = $em->getRepository('FilmoBundle:Films')->findAll();
+        $listefilms = $em->getRepository('FilmoBundle:Films')->findAll();
+
+        $films  = $this->get('knp_paginator')->paginate(
+            $listefilms,
+            $request->query->get('page', 1)/*page number*/,
+            2/*limit per page*/
+        );
 
         return $this->render('films/index.html.twig', array(
-            'films' => $films,
+            'pagination' => $films,
         ));
     }
 

@@ -16,7 +16,7 @@
             </tr>
         </thead>
         <tbody>
-        {% for film in films %}
+        {% for film in pagination %}
             <tr>
                 <td><a href="{{ path('films_show', { 'id': film.id }) }}">{{ film.id }}</a></td>
                 <td>{{ film.titre }}</td>
@@ -62,4 +62,7 @@
             <a href="{{ path('films_new') }}">Create a new entry</a>
         </li>
     </ul>
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
 {% endblock %}
